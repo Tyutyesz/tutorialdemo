@@ -22,7 +22,7 @@ interface Hero{
 	</div>
 	`
 })
-
+//https://angular.io/docs/ts/latest/tutorial/toh-pt1.html
 export class AppComponent {
 	public title = 'Tour of Heroes';
 	public hero:Hero = {
