@@ -16,15 +16,18 @@ import {HeroService} from './hero.service';
 export class DashboardComponent implements OnInit{
 	heroes: Hero[] = [];
 
-	constructor(private _heroService: HeroService){}
+	constructor(
+		private _router: Router,
+		private _heroService: HeroService) {
+	}
 
-	ngOnInit(){
+	ngOnInit() {
 		this._heroService.getHeroes()
 			.then(heroes => this.heroes = heroes.slice(1,5));
 	}
 
-	gotoDetail(hero: Hero){
-		let link = ['HeroDetail' , {id: hero.id}];
+	gotoDetail(hero: Hero) {
+		let link = ['HeroDetail', { id: hero.id }];
 		this._router.navigate(link);
 	}
 }
